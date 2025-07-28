@@ -1,0 +1,68 @@
+[
+{
+  "directory": "/home/weiy/Workspace/Tart/WebServer/build",
+  "command": "/usr/bin/clang++  -I/home/weiy/Workspace/Tart/WebServer/include -g -O0 -Wall -Wextra -std=gnu++17 -o CMakeFiles/WebServer.dir/src/Acceptor.cpp.o -c /home/weiy/Workspace/Tart/WebServer/src/Acceptor.cpp",
+  "file": "/home/weiy/Workspace/Tart/WebServer/src/Acceptor.cpp",
+  "output": "CMakeFiles/WebServer.dir/src/Acceptor.cpp.o"
+},
+{
+  "directory": "/home/weiy/Workspace/Tart/WebServer/build",
+  "command": "/usr/bin/clang++  -I/home/weiy/Workspace/Tart/WebServer/include -g -O0 -Wall -Wextra -std=gnu++17 -o CMakeFiles/WebServer.dir/src/Buffer.cpp.o -c /home/weiy/Workspace/Tart/WebServer/src/Buffer.cpp",
+  "file": "/home/weiy/Workspace/Tart/WebServer/src/Buffer.cpp",
+  "output": "CMakeFiles/WebServer.dir/src/Buffer.cpp.o"
+},
+{
+  "directory": "/home/weiy/Workspace/Tart/WebServer/build",
+  "command": "/usr/bin/clang++  -I/home/weiy/Workspace/Tart/WebServer/include -g -O0 -Wall -Wextra -std=gnu++17 -o CMakeFiles/WebServer.dir/src/Channel.cpp.o -c /home/weiy/Workspace/Tart/WebServer/src/Channel.cpp",
+  "file": "/home/weiy/Workspace/Tart/WebServer/src/Channel.cpp",
+  "output": "CMakeFiles/WebServer.dir/src/Channel.cpp.o"
+},
+{
+  "directory": "/home/weiy/Workspace/Tart/WebServer/build",
+  "command": "/usr/bin/clang++  -I/home/weiy/Workspace/Tart/WebServer/include -g -O0 -Wall -Wextra -std=gnu++17 -o CMakeFiles/WebServer.dir/src/Connection.cpp.o -c /home/weiy/Workspace/Tart/WebServer/src/Connection.cpp",
+  "file": "/home/weiy/Workspace/Tart/WebServer/src/Connection.cpp",
+  "output": "CMakeFiles/WebServer.dir/src/Connection.cpp.o"
+},
+{
+  "directory": "/home/weiy/Workspace/Tart/WebServer/build",
+  "command": "/usr/bin/clang++  -I/home/weiy/Workspace/Tart/WebServer/include -g -O0 -Wall -Wextra -std=gnu++17 -o CMakeFiles/WebServer.dir/src/Epoll.cpp.o -c /home/weiy/Workspace/Tart/WebServer/src/Epoll.cpp",
+  "file": "/home/weiy/Workspace/Tart/WebServer/src/Epoll.cpp",
+  "output": "CMakeFiles/WebServer.dir/src/Epoll.cpp.o"
+},
+{
+  "directory": "/home/weiy/Workspace/Tart/WebServer/build",
+  "command": "/usr/bin/clang++  -I/home/weiy/Workspace/Tart/WebServer/include -g -O0 -Wall -Wextra -std=gnu++17 -o CMakeFiles/WebServer.dir/src/EventLoop.cpp.o -c /home/weiy/Workspace/Tart/WebServer/src/EventLoop.cpp",
+  "file": "/home/weiy/Workspace/Tart/WebServer/src/EventLoop.cpp",
+  "output": "CMakeFiles/WebServer.dir/src/EventLoop.cpp.o"
+},
+{
+  "directory": "/home/weiy/Workspace/Tart/WebServer/build",
+  "command": "/usr/bin/clang++  -I/home/weiy/Workspace/Tart/WebServer/include -g -O0 -Wall -Wextra -std=gnu++17 -o CMakeFiles/WebServer.dir/src/Server.cpp.o -c /home/weiy/Workspace/Tart/WebServer/src/Server.cpp",
+  "file": "/home/weiy/Workspace/Tart/WebServer/src/Server.cpp",
+  "output": "CMakeFiles/WebServer.dir/src/Server.cpp.o"
+},
+{
+  "directory": "/home/weiy/Workspace/Tart/WebServer/build",
+  "command": "/usr/bin/clang++  -I/home/weiy/Workspace/Tart/WebServer/include -g -O0 -Wall -Wextra -std=gnu++17 -o CMakeFiles/WebServer.dir/src/Socket.cpp.o -c /home/weiy/Workspace/Tart/WebServer/src/Socket.cpp",
+  "file": "/home/weiy/Workspace/Tart/WebServer/src/Socket.cpp",
+  "output": "CMakeFiles/WebServer.dir/src/Socket.cpp.o"
+},
+{
+  "directory": "/home/weiy/Workspace/Tart/WebServer/build",
+  "command": "/usr/bin/clang++  -I/home/weiy/Workspace/Tart/WebServer/include -g -O0 -Wall -Wextra -std=gnu++17 -o CMakeFiles/WebServer.dir/src/main.cpp.o -c /home/weiy/Workspace/Tart/WebServer/src/main.cpp",
+  "file": "/home/weiy/Workspace/Tart/WebServer/src/main.cpp",
+  "output": "CMakeFiles/WebServer.dir/src/main.cpp.o"
+},
+{
+  "directory": "/home/weiy/Workspace/Tart/WebServer/build",
+  "command": "/usr/bin/clang++  -I/home/weiy/Workspace/Tart/WebServer/include -g -O0 -Wall -Wextra -std=gnu++17 -o CMakeFiles/WebServer.dir/src/thread_pool.cpp.o -c /home/weiy/Workspace/Tart/WebServer/src/thread_pool.cpp",
+  "file": "/home/weiy/Workspace/Tart/WebServer/src/thread_pool.cpp",
+  "output": "CMakeFiles/WebServer.dir/src/thread_pool.cpp.o"
+},
+{
+  "directory": "/home/weiy/Workspace/Tart/WebServer/build",
+  "command": "/usr/bin/clang++  -I/home/weiy/Workspace/Tart/WebServer/include -g -O0 -Wall -Wextra -std=gnu++17 -o CMakeFiles/WebServer.dir/src/util.cpp.o -c /home/weiy/Workspace/Tart/WebServer/src/util.cpp",
+  "file": "/home/weiy/Workspace/Tart/WebServer/src/util.cpp",
+  "output": "CMakeFiles/WebServer.dir/src/util.cpp.o"
+}
+]
