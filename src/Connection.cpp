@@ -94,13 +94,39 @@ void Connection::no_block_read() {
 
     auto check = [&](ssize_t bytes) {
         bool is_disconnect = false;
-        if(bytes == -1 && errno == EINTR) {  //客户端正常中断、继续读取
-            printf("continue reading");
-        } else if(bytes == -1 && ((errno == EAGAIN) || (errno == EWOULDBLOCK))) { //非阻塞IO，这个条件表示数据全部读取完毕
-            printf("finish reading once, errno: %d\n", errno);
-        } else if(bytes == 0) {  //EOF，客户端断开连接
+        if(bytes == -1) {
+            if(bytes == 0) {
+            // EOF，客户端正常断开连接
+            printf("EOF, client disconnected\n");
             state = DISCONNECT;
             is_disconnect = true;
+            }else if(errno == EINTR) {
+                // 被信号中断，应该重试
+                printf("continue reading\n");
+            } else if(errno == EAGAIN || errno == EWOULDBLOCK) {
+                // 非阻塞IO，暂时无数据可读，正常情况
+                printf("finish reading once, errno: %d\n", errno);
+            } else if(errno == ECONNRESET) {
+                // 连接被对端重置
+                printf("Connection reset by peer\n");
+                state = DISCONNECT;
+                is_disconnect = true;
+            } else if(errno == EPIPE) {
+                // 管道破裂，对端已关闭
+                printf("Broken pipe\n");
+                state = DISCONNECT;
+                is_disconnect = true;
+            } else if(errno == EBADF) {
+                // 无效的文件描述符
+                printf("Bad file descriptor\n");
+                state = DISCONNECT;
+                is_disconnect = true;
+            } else {
+                // 其他未知错误
+                printf("Read error: %s\n", strerror(errno));
+                state = DISCONNECT;
+                is_disconnect = true;
+            }
         }
         return is_disconnect;
     };
@@ -135,6 +161,7 @@ void Connection::no_block_write(const char* message) {
         if(write_bytes < 0) {
             if(errno == EAGAIN || errno == EWOULDBLOCK) ; 
             else disconnect = true;
+            state = DISCONNECT;
         }
         return disconnect;
     };
@@ -154,16 +181,20 @@ void Connection::block_read() {
     
     if(read_bytes == -1) {
         printf("finish reading once, errno: %d\n", errno);
+        state = DISCONNECT;
     }
     else if(read_bytes == 0) {
         printf("EOF, client fd %d disconnected\n", fd);
-        close(fd);
+        state = DISCONNECT;
     }
 }
 
 void Connection::block_write(const char* message) {
     int fd = socket->getFd();
-    write(fd, message, strlen(message));
+    ssize_t write_bytes = write(fd, message, strlen(message));
+    if(write_bytes == -1) {
+        state = DISCONNECT;
+    }
 }
 
 void Connection::disconnect() {
